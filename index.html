@@ -7,6 +7,8 @@
   <body>
   	<script>
   		var xhr = new XMLHttpRequest();
+		
+		var results = "https://pokeapi.co/api/v1/sprite/" + randomNum;
 
   		var randomNum = Math.floor(Math.random() * 700 + 1);
 
@@ -22,7 +24,7 @@
 	}	
 
 
-		xhr.open("GET", "https://pokeapi.co/api/v1/sprite/" + randomNum, true);
+		xhr.open("GET", results, true);
 
 		xhr.send(null);
 
@@ -33,6 +35,8 @@
 		console.log(createImg("https://pokeapi.co" + parsedJsonObj.image));
 
 		console.log(parsedJsonObj.image);
+		
+		console.log(results);
    
     </script>
   </body>
