@@ -22,7 +22,7 @@
 	}	
 
 
-		var results = xhr.open("GET", "https://pokeapi.co/api/v1/sprite/" + randomNum, false);
+		xhr.open("GET", "https://pokeapi.co/api/v1/sprite/" + randomNum, true);
 
 		xhr.send(null);
 
@@ -33,8 +33,6 @@
 		console.log(createImg("https://pokeapi.co" + parsedJsonObj.image));
 
 		console.log(parsedJsonObj.image);
-		
-		console.log(results);
    
     </script>
   </body>
