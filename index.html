@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+  	<script>
+  		var xhr = new XMLHttpRequest();
+
+  		var randomNum = Math.floor(Math.random() * 700 + 1);
+
+		xhr.onreadystatechange = function() {
+    		if (xhr.readyState == XMLHttpRequest.DONE) {
+    	}
+	}
+
+		function createImg(src) {
+			var newImg = document.createElement("img");
+			newImg.src = src;
+			document.body.appendChild(newImg);
+	}	
+
+
+		xhr.open("GET", "https://pokeapi.co/api/v1/sprite/" + randomNum, false);
+
+		xhr.send(null);
+
+		var jsonObj = xhr.responseText;
+
+		var parsedJsonObj = JSON.parse(jsonObj);
+		
+		console.log(createImg("https://pokeapi.co" + parsedJsonObj.image));
+
+		console.log(parsedJsonObj.image);
+   
+    </script>
+  </body>
+</html>
